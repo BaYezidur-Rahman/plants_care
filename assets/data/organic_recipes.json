@@ -1,0 +1,387 @@
+[
+  {
+    "id": "recipe_banana_peel",
+    "nameBn": "কলার খোসার সার পানি",
+    "category": "সার",
+    "prepTimeMinutes": 48,
+    "ingredients": [
+      {"item": "কলার খোসা", "amount": "৩", "unit": "টি"},
+      {"item": "পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "কলার খোসাগুলো ছোট করে কাটুন।",
+      "১ লিটার পানিতে ভিজিয়ে রাখুন ৪৮ ঘণ্টা।",
+      "পানি ছেঁকে নিয়ে গাছের গোড়ায় দিন।"
+    ],
+    "suitablePlants": ["গোলাপ", "টমেটো", "বেগুন"],
+    "frequency": "সপ্তাহে ১ বার",
+    "storageInstructions": "তাজা ব্যবহার করা ভালো।",
+    "precautions": "বেশি দিন জমিয়ে রাখবেন না, পচে গন্ধ হতে পারে।",
+    "effectiveness": 5
+  },
+  {
+    "id": "recipe_neem_spray",
+    "nameBn": "নিম তেলের কীটনাশক স্প্রে",
+    "category": "কীটনাশক",
+    "prepTimeMinutes": 10,
+    "ingredients": [
+      {"item": "নিম তেল", "amount": "১", "unit": "চা চামচ"},
+      {"item": "তরল সাবান", "amount": "০.৫", "unit": "চা চামচ"},
+      {"item": "কুসুম গরম পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "পানিতে নিম তেল ও সাবান মেশান।",
+      "ভালোভাবে ঝাকিয়ে নিন।",
+      "পাতার নিচে ও উপরে স্প্রে করুন।"
+    ],
+    "suitablePlants": ["সব গাছ"],
+    "frequency": "সপ্তাহে ২ বার",
+    "storageInstructions": "প্রতিবার নতুন তৈরি করুন।",
+    "precautions": "দিনের কড়া রোদে স্প্রে করবেন না।",
+    "effectiveness": 5
+  },
+  {
+    "id": "recipe_garlic_chili",
+    "nameBn": "রসুন-মরিচের স্প্রে",
+    "category": "কীটনাশক",
+    "prepTimeMinutes": 1440,
+    "ingredients": [
+      {"item": "রসুন", "amount": "২", "unit": "টি কোয়া"},
+      {"item": "শুকনো মরিচ", "amount": "২", "unit": "টি"},
+      {"item": "পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "রসুন ও মরিচ পিষে নিন।",
+      "১ লিটার পানিতে মিশিয়ে ২৪ ঘণ্টা রাখুন।",
+      "ছেঁকে নিয়ে স্প্রে করুন।"
+    ],
+    "suitablePlants": ["মরিচ", "বেগুন", "ঢেঁড়স"],
+    "frequency": "১০ দিনে ১ বার",
+    "storageInstructions": "ঠান্ডা স্থানে রাখুন।",
+    "precautions": "চোখে যেন না লাগে খেয়াল রাখুন।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_compost_tea",
+    "nameBn": "কম্পোস্ট চা",
+    "category": "সার",
+    "prepTimeMinutes": 2880,
+    "ingredients": [
+      {"item": "তৈরি কম্পোস্ট", "amount": "১", "unit": "বালতি"},
+      {"item": "পানি", "amount": "৫", "unit": "বালতি"}
+    ],
+    "steps": [
+      "কম্পোস্ট একটি কাপড়ের ব্যাগে ভরে পানিতে ডুবিয়ে রাখুন।",
+      "৪৮ ঘণ্টা পর পানিটি বাদামী রঙের হলে তুলে নিন।",
+      "পানি দিয়ে পাতলা করে গাছে দিন।"
+    ],
+    "suitablePlants": ["সব গাছ"],
+    "frequency": "মাসে ২ বার",
+    "storageInstructions": "দ্রুত ব্যবহার করুন।",
+    "precautions": "গাছে সরাসরি ঢালবেন না, পাতলা করে নিন।",
+    "effectiveness": 5
+  },
+  {
+    "id": "recipe_eggshell",
+    "nameBn": "ডিমের খোসার ক্যালসিয়াম সার",
+    "category": "সার",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "ডিমের খোসা", "amount": "৫-১০", "unit": "টি"}
+    ],
+    "steps": [
+      "খোসাগুলো ধুয়ে শুকিয়ে নিন।",
+      "গুঁড়ো করে নিন।",
+      "গাছের গোড়ার মাটিতে মিশিয়ে দিন।"
+    ],
+    "suitablePlants": ["টমেটো", "বেগুন", "মরিচ"],
+    "frequency": "মাসে ১ বার",
+    "storageInstructions": "শুকনো বয়ামে রাখুন।",
+    "precautions": "ভালোভাবে গুঁড়ো করুন যেন দ্রুত মিশে যায়।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_tea_leaf",
+    "nameBn": "চা পাতার সার",
+    "category": "সার",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "ব্যবহৃত চা পাতা", "amount": "১", "unit": "কাপ"}
+    ],
+    "steps": [
+      "চা পাতা থেকে চিনি ও দুধ ধুয়ে ফেলুন।",
+      "শুকিয়ে নিন।",
+      "গাছের গোড়ায় দিন।"
+    ],
+    "suitablePlants": ["গোলাপ", "জবা", "ইনডোর গাছ"],
+    "frequency": "১৫ দিনে ১ বার",
+    "storageInstructions": "শুকিয়ে সংরক্ষণ করুন।",
+    "precautions": "চিনি থাকলে পিঁপড়া আসতে পারে।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_onion_peel",
+    "nameBn": "পেঁয়াজের খোসার স্প্রে",
+    "category": "সার",
+    "prepTimeMinutes": 24,
+    "ingredients": [
+      {"item": "পেঁয়াজের খোসা", "amount": "২", "unit": "মুঠো"},
+      {"item": "পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "খোসাগুলো ১ লিটার পানিতে ২৪ ঘণ্টা ভিজিয়ে রাখুন।",
+      "ছেঁকে নিন।",
+      "এই পানি ইনডোর গাছে দিন।"
+    ],
+    "suitablePlants": ["ইনডোর গাছ", "মানিপ্ল্যান্ট"],
+    "frequency": "সপ্তাহে ১ বার",
+    "storageInstructions": "তাজা ব্যবহার করুন।",
+    "precautions": "কোনো সতর্কতা নেই।",
+    "effectiveness": 3
+  },
+  {
+    "id": "recipe_wood_ash",
+    "nameBn": "কাঠের ছাইয়ের সার",
+    "category": "সার",
+    "prepTimeMinutes": 1,
+    "ingredients": [
+      {"item": "কাঠের ছাই", "amount": "১", "unit": "মুঠো"}
+    ],
+    "steps": [
+      "ছাই নিয়ে মাটির উপরিভাগে ছিটিয়ে দিন।",
+      "হালকাভাবে মাটির সাথে মিশিয়ে দিন।"
+    ],
+    "suitablePlants": ["টমেটো", "সবজি"],
+    "frequency": "৩ মাসে ১ বার",
+    "storageInstructions": "শুকনো স্থানে রাখুন।",
+    "precautions": "অতিরিক্ত ছাই মাটির pH বাড়িয়ে দিতে পারে।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_milk_fungicide",
+    "nameBn": "দুধের ছত্রাকনাশক",
+    "category": "ছত্রাকনাশক",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "দুধ", "amount": "১", "unit": "কাপ"},
+      {"item": "পানি", "amount": "২", "unit": "কাপ"}
+    ],
+    "steps": [
+      "দুধ ও পানি মেশান।",
+      "ছত্রাক আক্রান্ত পাতায় স্প্রে করুন।"
+    ],
+    "suitablePlants": ["শসা", "লাউ", "কুমড়া"],
+    "frequency": "১০ দিনে ১ বার",
+    "storageInstructions": "তাজা ব্যবহার করুন।",
+    "precautions": "পচা দুধ ব্যবহার করবেন না।",
+    "effectiveness": 3
+  },
+  {
+    "id": "recipe_turmeric_antifungal",
+    "nameBn": "হলুদের অ্যান্টিফাঙ্গাল স্প্রে",
+    "category": "ছত্রাকনাশক",
+    "prepTimeMinutes": 10,
+    "ingredients": [
+      {"item": "হলুদ গুঁড়ো", "amount": "১", "unit": "চা চামচ"},
+      {"item": "পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "পানিতে হলুদ গুলিয়ে নিন।",
+      "আক্রান্ত স্থানে স্প্রে করুন অথবা গোড়ায় দিন।"
+    ],
+    "suitablePlants": ["সব গাছ"],
+    "frequency": "প্রয়োজন অনুযায়ী",
+    "storageInstructions": "কোনো সতর্কতা নেই।",
+    "precautions": "হলুদ দাগ লাগতে পারে।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_coffee_ground",
+    "nameBn": "কফি গ্রাউন্ড সার",
+    "category": "সার",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "ব্যবহৃত কফি বিন গুঁড়ো", "amount": "১", "unit": "কাপ"}
+    ],
+    "steps": [
+      "কফি তৈরির পর অবশিষ্ট কফি শুকিয়ে নিন।",
+      "গাছের গোড়ার মাটির সাথে মিশিয়ে দিন।"
+    ],
+    "suitablePlants": ["গোলাপ", "নীল অপরাজিতা", "সবজি"],
+    "frequency": "মাসে ১ বার",
+    "storageInstructions": "শুকনো বয়ামে রাখুন।",
+    "precautions": "অতিরিক্ত ব্যবহারে মাটি অম্লীয় হতে পারে।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_epsom_salt",
+    "nameBn": "এপসম সল্ট স্প্রে",
+    "category": "সার",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "এপসম সল্ট", "amount": "১", "unit": "টেবিল চামচ"},
+      {"item": "পানি", "amount": "৪", "unit": "লিটার"}
+    ],
+    "steps": [
+      "পানিতে লবণ গুলিয়ে নিন।",
+      "মাসে একবার পাতায় স্প্রে করুন।"
+    ],
+    "suitablePlants": ["মরিচ", "টমেটো", "গোলাপ"],
+    "frequency": "মাসে ১ বার",
+    "storageInstructions": "কোনো সতর্কতা নেই।",
+    "precautions": "বেশি দিলে পাতা পুড়ে যেতে পারে।",
+    "effectiveness": 5
+  },
+  {
+    "id": "recipe_baking_soda",
+    "nameBn": "বেকিং সোডা ছত্রাকনাশক",
+    "category": "ছত্রাকনাশক",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "বেকিং সোডা", "amount": "১", "unit": "চা চামচ"},
+      {"item": "পানি", "amount": "১", "unit": "লিটার"},
+      {"item": "তরল সাবান", "amount": "২", "unit": "ফোঁটা"}
+    ],
+    "steps": [
+      "সব উপকরণ মিশিয়ে নিন।",
+      "আক্রান্ত পাতায় স্প্রে করুন।"
+    ],
+    "suitablePlants": ["শসা", "সবজি"],
+    "frequency": "সপ্তাহে ১ বার",
+    "storageInstructions": "তাজা ব্যবহার করুন।",
+    "precautions": "কড়া রোদে স্প্রে করবেন না।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_aloe_fertilizer",
+    "nameBn": "অ্যালোভেরা লিকুইড সার",
+    "category": "সার",
+    "prepTimeMinutes": 120,
+    "ingredients": [
+      {"item": "অ্যালোভেরা জেল", "amount": "১/২", "unit": "কাপ"},
+      {"item": "পানি", "amount": "২", "unit": "লিটার"}
+    ],
+    "steps": [
+      "জেল ও পানি ব্লেন্ড করে নিন।",
+      "গাছের গোড়ায় পানি হিসেবে দিন।"
+    ],
+    "suitablePlants": ["সব ইনডোর গাছ"],
+    "frequency": "মাসে ২ বার",
+    "storageInstructions": "তাজা ব্যবহার করুন।",
+    "precautions": "কোনো সতর্কতা নেই।",
+    "effectiveness": 3
+  },
+  {
+    "id": "recipe_clove_oil",
+    "nameBn": "লবঙ্গ তেলের স্প্রে",
+    "category": "কীটনাশক",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "লবঙ্গ তেল", "amount": "৫", "unit": "ফোঁটা"},
+      {"item": "পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "তেল ও পানি মিশিয়ে নিন।",
+      "পিঁপড়া ও ছোট পোকা তাড়াতে স্প্রে করুন।"
+    ],
+    "suitablePlants": ["টব"],
+    "frequency": "প্রয়োজন অনুযায়ী",
+    "storageInstructions": "ঠান্ডা স্থানে রাখুন।",
+    "precautions": "খুব অল্প তেল ব্যবহার করবেন।",
+    "effectiveness": 3
+  },
+  {
+    "id": "recipe_cinnamon_antifungal",
+    "nameBn": "দারুচিনি পাউডার",
+    "category": "ছত্রাকনাশক",
+    "prepTimeMinutes": 1,
+    "ingredients": [
+      {"item": "দারুচিনি গুঁড়ো", "amount": "১", "unit": "চা চামচ"}
+    ],
+    "steps": [
+      "গাছের চারা রোপণের সময় মাটিতে ছিটিয়ে দিন।",
+      "ছত্রাক সংক্রমণ রোধে কার্যকর।"
+    ],
+    "suitablePlants": ["নতুন চারা"],
+    "frequency": "১ বার",
+    "storageInstructions": "শুকনো বয়ামে রাখুন।",
+    "precautions": "খাঁটি দারুচিনি গুঁড়ো ব্যবহার করুন।",
+    "effectiveness": 4
+  },
+  {
+    "id": "recipe_tobacco_water",
+    "nameBn": "তামাক পানি",
+    "category": "কীটনাশক",
+    "prepTimeMinutes": 1440,
+    "ingredients": [
+      {"item": "তামাক পাতা", "amount": "৫", "unit": "গ্রাম"},
+      {"item": "পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "তামাক পাতা পানিতে ২৪ ঘণ্টা ভিজিয়ে রাখুন।",
+      "ছেঁকে নিয়ে স্প্রে করুন।"
+    ],
+    "suitablePlants": ["ফুলের গাছ"],
+    "frequency": "মাসে ১ বার",
+    "storageInstructions": "শিশুদের নাগালের বাইরে রাখুন।",
+    "precautions": "বিষাক্ত, সবজিতে ব্যবহার করবেন না।",
+    "effectiveness": 5
+  },
+  {
+    "id": "recipe_rice_water",
+    "nameBn": "চাল ধোয়া পানি",
+    "category": "সার",
+    "prepTimeMinutes": 5,
+    "ingredients": [
+      {"item": "চাল ধোয়া পানি", "amount": "১", "unit": "লিটার"}
+    ],
+    "steps": [
+      "চাল ধোয়ার প্রথম পানিটি সংগ্রহ করুন।",
+      "সরাসরি গাছের গোড়ায় দিন।"
+    ],
+    "suitablePlants": ["সব গাছ"],
+    "frequency": "প্রতিদিন",
+    "storageInstructions": "তাজা ব্যবহার করুন।",
+    "precautions": "কোনো সতর্কতা নেই।",
+    "effectiveness": 3
+  },
+  {
+    "id": "recipe_mustard_cake",
+    "nameBn": "সরিষার খৈল সার",
+    "category": "সার",
+    "prepTimeMinutes": 72,
+    "ingredients": [
+      {"item": "সরিষার খৈল", "amount": "১০০", "unit": "গ্রাম"},
+      {"item": "পানি", "amount": "৫", "unit": "লিটার"}
+    ],
+    "steps": [
+      "খৈল পানিতে ৩ দিন ভিজিয়ে রাখুন।",
+      "আরও পানি দিয়ে পাতলা করে নিন।",
+      "গাছের গোড়ায় দিন।"
+    ],
+    "suitablePlants": ["সবজি", "ফল"],
+    "frequency": "মাসে ১ বার",
+    "storageInstructions": "বেশি দিন জমিয়ে রাখবেন না।",
+    "precautions": "অতিরিক্ত দিলে গাছ পুড়ে যেতে পারে।",
+    "effectiveness": 5
+  },
+  {
+    "id": "recipe_aspirin_spray",
+    "nameBn": "অ্যাসপিরিন স্প্রে",
+    "category": "রোগ প্রতিরোধ",
+    "prepTimeMinutes": 10,
+    "ingredients": [
+      {"item": "অ্যাসপিরিন ট্যাবলেট", "amount": "১", "unit": "টি"},
+      {"item": "পানি", "amount": "৪", "unit": "লিটার"}
+    ],
+    "steps": [
+      "ট্যাবলেটটি গুঁড়ো করে পানিতে মেশান।",
+      "গাছে স্প্রে করলে রোগ প্রতিরোধ ক্ষমতা বাড়ে।"
+    ],
+    "suitablePlants": ["টমেটো", "সবজি"],
+    "frequency": "মাসে ১ বার",
+    "storageInstructions": "তাজা ব্যবহার করুন।",
+    "precautions": "বেশি ট্যাবলেট দেবেন না।",
+    "effectiveness": 3
+  }
+]
