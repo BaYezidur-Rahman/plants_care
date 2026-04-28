@@ -39,7 +39,7 @@ class MainScreen extends GetView<HomeController> {
 
           // AI Floating Button - Updated Position
           Positioned(
-            bottom: MediaQuery.of(context).padding.bottom + 45,
+            bottom: MediaQuery.of(context).padding.bottom + 85,
             right: 16,
             child: const AiFloatingButton(),
           ),

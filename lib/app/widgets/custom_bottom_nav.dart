@@ -49,20 +49,27 @@ class CustomBottomNav extends StatelessWidget {
               height: 4,
               decoration: BoxDecoration(
                 color: isDark ? AppColors.darkPrimary : selectedColor,
-                borderRadius: const BorderRadius.vertical(bottom: Radius.circular(4)),
+                borderRadius:
+                    const BorderRadius.vertical(bottom: Radius.circular(4)),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
+            padding:
+                EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildNavItem(0, 'হোম', IconsaxPlusLinear.home, IconsaxPlusBold.home, isDark, selectedColor),
-                _buildNavItem(1, 'বাগান', IconsaxPlusLinear.tree, IconsaxPlusBold.tree, isDark, selectedColor),
-                _buildNavItem(2, 'গ্যালারি', IconsaxPlusLinear.gallery, IconsaxPlusBold.gallery, isDark, selectedColor),
-                _buildNavItem(3, 'রুটিন', IconsaxPlusLinear.calendar, IconsaxPlusBold.calendar, isDark, selectedColor),
-                _buildNavItem(4, 'লাইব্রেরি', IconsaxPlusLinear.book, IconsaxPlusBold.book, isDark, selectedColor),
+                _buildNavItem(0, 'হোম', IconsaxPlusLinear.home,
+                    IconsaxPlusBold.home, isDark, selectedColor),
+                _buildNavItem(1, 'বাগান', IconsaxPlusLinear.tree,
+                    IconsaxPlusBold.tree, isDark, selectedColor),
+                _buildNavItem(2, 'গ্যালারি', IconsaxPlusLinear.gallery,
+                    IconsaxPlusBold.gallery, isDark, selectedColor),
+                _buildNavItem(3, 'রুটিন', IconsaxPlusLinear.calendar,
+                    IconsaxPlusBold.calendar, isDark, selectedColor),
+                _buildNavItem(4, 'লাইব্রেরি', IconsaxPlusLinear.book,
+                    IconsaxPlusBold.book, isDark, selectedColor),
               ],
             ),
           ),
@@ -71,7 +78,8 @@ class CustomBottomNav extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(int index, String label, IconData outlineIcon, IconData filledIcon, bool isDark, Color selectedColor) {
+  Widget _buildNavItem(int index, String label, IconData outlineIcon,
+      IconData filledIcon, bool isDark, Color selectedColor) {
     final isSelected = currentIndex == index;
     final activeColor = isDark ? AppColors.darkPrimary : selectedColor;
     final inactiveColor = isDark ? AppColors.darkTextHint : AppColors.textHint;
@@ -84,10 +92,14 @@ class CustomBottomNav extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              isSelected ? filledIcon : outlineIcon,
-              color: isSelected ? activeColor : inactiveColor,
-              size: 24,
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 200),
+              child: Icon(
+                isSelected ? filledIcon : outlineIcon,
+                key: ValueKey(isSelected),
+                color: isSelected ? activeColor : inactiveColor,
+                size: 24,
+              ),
             ),
             const SizedBox(height: 4),
             Text(

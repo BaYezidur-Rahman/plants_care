@@ -56,17 +56,27 @@ class _CommunityGalleryState extends State<CommunityGallery> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text('🌸', style: TextStyle(fontSize: 80))
-                      .animate(onPlay: (controller) => controller.repeat(reverse: true))
-                      .scale(duration: const Duration(seconds: 2), curve: Curves.easeInOut),
+                      .animate(
+                          onPlay: (controller) =>
+                              controller.repeat(reverse: true))
+                      .scale(
+                          duration: const Duration(seconds: 2),
+                          curve: Curves.easeInOut),
                   const SizedBox(height: 24),
                   const Text(
                     'Community Gallery',
-                    style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
                   const Text(
                     'শীঘ্রই আসছে...',
-                    style: TextStyle(color: Color(0xFF88DAB9), fontSize: 18, fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                        color: Color(0xFF88DAB9),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -81,8 +91,13 @@ class _CommunityGalleryState extends State<CommunityGallery> {
                     decoration: InputDecoration(
                       hintText: 'আপনার ইমেইল দিন',
                       hintStyle: const TextStyle(color: Colors.white30),
-                      enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: const BorderSide(color: Colors.white24)),
-                      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(16), borderSide: const BorderSide(color: AppColors.primary)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                          borderSide: const BorderSide(color: Colors.white24)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                          borderSide:
+                              const BorderSide(color: AppColors.primary)),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.05),
                     ),
@@ -96,9 +111,12 @@ class _CommunityGalleryState extends State<CommunityGallery> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         foregroundColor: const Color(0xFF1B3B2B),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16)),
                       ),
-                      child: const Text('জানান আমাকে', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                      child: const Text('জানান আমাকে',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16)),
                     ),
                   ),
                 ],
@@ -123,9 +141,13 @@ class _CommunityGalleryState extends State<CommunityGallery> {
       top: startY,
       child: Text(emoji, style: const TextStyle(fontSize: 24))
           .animate(onPlay: (controller) => controller.repeat())
-          .moveY(begin: 0, end: -200, duration: duration, curve: Curves.easeInOut)
+          .moveY(
+              begin: 0, end: -200, duration: duration, curve: Curves.easeInOut)
           .fadeOut(duration: duration, curve: Curves.easeIn)
-          .moveX(begin: 0, end: (random.nextBool() ? 100 : -100), duration: duration),
+          .moveX(
+              begin: 0,
+              end: (random.nextBool() ? 100 : -100),
+              duration: duration),
     );
   }
 }
