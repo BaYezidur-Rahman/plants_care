@@ -8,25 +8,25 @@ import '../data/models/compost_model.dart';
 import '../data/models/badge_model.dart';
 
 class HiveBoxes {
-  static const String plants = 'plants_box';
-  static const String tasks = 'tasks_box';
-  static const String careLogs = 'care_logs_box';
-  static const String journal = 'journal_box';
-  static const String chat = 'chat_box';
-  static const String compost = 'compost_box';
-  static const String badges = 'badges_box';
-  static const String settings = 'settings_box';
-  static const String library = 'library_box';
-  static const String bookmarks = 'bookmarks_box';
+  static const String settings = 'settings';
+  static const String plants = 'plants';
+  static const String tasks = 'tasks';
+  static const String careLogs = 'care_logs';
+  static const String journals = 'journals';
+  static const String chats = 'chats';
+  static const String composts = 'composts';
+  static const String badges = 'badges';
+  static const String library = 'library';
+  static const String bookmarks = 'bookmarks';
 
   static Future<void> openRemainingBoxes() async {
     await Future.wait([
       Hive.openBox<PlantModel>(plants),
       Hive.openBox<TaskModel>(tasks),
       Hive.openBox<CareLogModel>(careLogs),
-      Hive.openBox<JournalEntryModel>(journal),
-      Hive.openBox<ChatMessageModel>(chat),
-      Hive.openBox<CompostModel>(compost),
+      Hive.openBox<JournalEntryModel>(journals),
+      Hive.openBox<ChatMessageModel>(chats),
+      Hive.openBox<CompostModel>(composts),
       Hive.openBox<BadgeModel>(badges),
       Hive.openBox(library),
       Hive.openBox(bookmarks),

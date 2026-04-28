@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -25,6 +27,11 @@ import 'package:timezone/data/latest.dart' as tz;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  FlutterError.onError = (FlutterErrorDetails details) {
+    print('🚨 Flutter Error: ${details.exception}');
+    print('🚨 Stack: ${details.stack}');
+  };
+
   // Initialize Timezones early
   tz.initializeTimeZones();
 
@@ -40,8 +47,15 @@ void main() async {
   Hive.registerAdapter(CompostModelAdapter());
   Hive.registerAdapter(BadgeModelAdapter());
 
-  // Open essential boxes for startup
+  // Open ALL required boxes for startup
   await Hive.openBox(HiveBoxes.settings);
+  await Hive.openBox<PlantModel>(HiveBoxes.plants);
+  await Hive.openBox<TaskModel>(HiveBoxes.tasks);
+  await Hive.openBox<CareLogModel>(HiveBoxes.careLogs);
+  await Hive.openBox<JournalEntryModel>(HiveBoxes.journals);
+  await Hive.openBox<ChatMessageModel>(HiveBoxes.chats);
+  await Hive.openBox<CompostModel>(HiveBoxes.composts);
+  await Hive.openBox<BadgeModel>(HiveBoxes.badges);
 
   // Initialize Essential Controllers
   Get.put(ThemeController(), permanent: true);

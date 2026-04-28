@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, unnecessary_cast
+
 import 'dart:async';
 import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
@@ -19,7 +21,7 @@ class WeatherController extends GetxController {
   void onInit() {
     super.onInit();
     _settingsBox = Hive.box(HiveBoxes.settings);
-    
+
     // Pattern: Never call async directly in onInit
     Future.delayed(Duration.zero, () async {
       await _initWeather();
@@ -39,7 +41,7 @@ class WeatherController extends GetxController {
         permission = await Geolocator.requestPermission();
       }
 
-      if (permission == LocationPermission.deniedForever || 
+      if (permission == LocationPermission.deniedForever ||
           permission == LocationPermission.denied) {
         // Fallback to city if permission is denied
         await _fetchWeatherByCity();
@@ -56,9 +58,9 @@ class WeatherController extends GetxController {
       );
 
       // 4. Fetch Weather by Coordinates
-      final data = await _service.fetchWeather(position.latitude, position.longitude);
+      final data =
+          await _service.fetchWeather(position.latitude, position.longitude);
       _updateWeatherUI(data);
-
     } on TimeoutException {
       print('⚠️ GPS Timeout, trying city fallback');
       await _fetchWeatherByCity();
@@ -88,9 +90,15 @@ class WeatherController extends GetxController {
     smartAlert.value = _service.getSmartAlert(data);
     weatherState.value = 'loaded';
 
-    // Reschedule if Rainy (logic from previous version)
+    // Safe: use try/catch and check if controller exists
     if (data.rainProbability > 60) {
-      Get.find<RoutineController>().postponeWateringTasks();
+      try {
+        if (Get.isRegistered<RoutineController>()) {
+          Get.find<RoutineController>().postponeWateringTasks();
+        }
+      } catch (e) {
+        print('⚠️ Could not postpone watering: $e');
+      }
     }
 
     // Cache the data
@@ -98,23 +106,49 @@ class WeatherController extends GetxController {
   }
 
   void _loadCachedWeather() {
-    final cachedJson = _settingsBox.get('cached_weather_data');
-    if (cachedJson != null) {
-      try {
-        // Assuming we store it as a Map or similar
-        // For this demo, we'll just check if it exists and set loaded if we have data
-        // If your WeatherModel has a fromMap/toMap, use it here.
-        // weatherData.value = WeatherModel.fromMap(Map<String, dynamic>.from(cachedJson));
-        // weatherState.value = 'loaded';
-      } catch (e) {
-        print('Error loading cached weather: $e');
+    try {
+      final temp = _settingsBox.get('cache_temp');
+      final city = _settingsBox.get('cache_city');
+      final condition = _settingsBox.get('cache_condition');
+      final conditionCode = _settingsBox.get('cache_conditionCode');
+      final humidity = _settingsBox.get('cache_humidity');
+      final windSpeed = _settingsBox.get('cache_windSpeed');
+      final icon = _settingsBox.get('cache_icon');
+
+      if (temp != null && city != null) {
+        weatherData.value = WeatherModel(
+          city: city,
+          temp: (temp as num).toDouble(),
+          feelsLike: (temp as num).toDouble(),
+          humidity: (humidity ?? 0) as int,
+          windSpeed: (windSpeed ?? 0.0) as double,
+          condition: condition ?? 'Clear',
+          conditionCode: (conditionCode ?? 800) as int,
+          icon: icon ?? '01d',
+          rainProbability: 0,
+        );
+        weatherState.value = 'loaded';
+        print('✅ Loaded cached weather for: $city');
       }
+    } catch (e) {
+      print('⚠️ Cache read error (non-fatal): $e');
     }
   }
 
   void _cacheWeather(WeatherModel data) {
-    // _settingsBox.put('cached_weather_data', data.toMap());
-    _settingsBox.put('weather_last_update', DateTime.now().millisecondsSinceEpoch);
+    try {
+      _settingsBox.put('cache_temp', data.temp);
+      _settingsBox.put('cache_city', data.city);
+      _settingsBox.put('cache_condition', data.condition);
+      _settingsBox.put('cache_conditionCode', data.conditionCode);
+      _settingsBox.put('cache_humidity', data.humidity);
+      _settingsBox.put('cache_windSpeed', data.windSpeed);
+      _settingsBox.put('cache_icon', data.icon);
+      _settingsBox.put(
+          'weather_last_update', DateTime.now().millisecondsSinceEpoch);
+    } catch (e) {
+      print('⚠️ Cache write error (non-fatal): $e');
+    }
   }
 
   void retry() {

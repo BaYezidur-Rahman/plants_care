@@ -17,7 +17,7 @@ class AiController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _chatBox = Hive.box<ChatMessageModel>(HiveBoxes.chat);
+    _chatBox = Hive.box<ChatMessageModel>(HiveBoxes.chats);
     _loadMessages();
   }
 

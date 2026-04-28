@@ -74,7 +74,7 @@ class HomeView extends GetView<HomeController> {
           fontWeight: FontWeight.bold,
           color: AppColors.primary,
         ),
-      ),
+      ).animate().fadeIn(duration: 400.ms),
       actions: [
         Stack(
           alignment: Alignment.center,
@@ -108,7 +108,7 @@ class HomeView extends GetView<HomeController> {
             )),
         const SizedBox(width: 8),
       ],
-    ).animate().fadeIn(duration: 400.ms);
+    );
   }
 
   // [2] Greeting Section

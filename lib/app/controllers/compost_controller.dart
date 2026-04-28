@@ -16,9 +16,9 @@ class CompostController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _compostBox = Hive.box<CompostModel>(HiveBoxes.compost);
+    _compostBox = Hive.box<CompostModel>(HiveBoxes.composts);
   }
-
+    
   @override
   void onReady() {
     super.onReady();

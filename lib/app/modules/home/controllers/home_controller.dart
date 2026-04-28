@@ -75,14 +75,33 @@ class HomeController extends GetxController {
 
   void _loadDashboardData() {
     try {
-      final routineCtrl = Get.find<RoutineController>();
-      todayTasks.assignAll(routineCtrl.getTasksForDate(DateTime.now()));
+      // Safe way to get tasks - check if controller exists first
+      if (Get.isRegistered<RoutineController>()) {
+        final routineCtrl = Get.find<RoutineController>();
+        todayTasks.assignAll(routineCtrl.getTasksForDate(DateTime.now()));
+      } else {
+        // RoutineController not ready yet, load tasks directly from Hive
+        final taskBox = Hive.box<TaskModel>(HiveBoxes.tasks);
+        final today = DateTime.now();
+        final todayList = taskBox.values.where((task) {
+          return task.scheduledDate.year == today.year &&
+              task.scheduledDate.month == today.month &&
+              task.scheduledDate.day == today.day &&
+              !task.isCompleted;
+        }).toList();
+        todayTasks.assignAll(todayList);
+      }
 
-      final allPlants = _plantBox.values.toList();
-      allPlants.sort((a, b) => a.healthScore.compareTo(b.healthScore));
-      recentPlants.assignAll(allPlants.take(5));
+      // Load recent plants safely
+      if (Hive.isBoxOpen(HiveBoxes.plants)) {
+        final allPlants = _plantBox.values.toList();
+        allPlants.sort((a, b) => a.healthScore.compareTo(b.healthScore));
+        recentPlants.assignAll(allPlants.take(5));
+      }
     } catch (e) {
-      print('Error loading dashboard data: $e');
+      print('⚠️ Dashboard load error (non-fatal): $e');
+      todayTasks.clear();
+      recentPlants.clear();
     }
   }
 
