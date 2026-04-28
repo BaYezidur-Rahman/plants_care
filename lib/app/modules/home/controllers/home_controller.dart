@@ -4,6 +4,7 @@ import '../../../controllers/routine_controller.dart';
 import '../../../data/models/plant_model.dart';
 import '../../../data/models/task_model.dart';
 import '../../../utils/hive_boxes.dart';
+import '../../../data/services/plant_advisor_service.dart';
 
 class HomeController extends GetxController {
   late Box _settingsBox;
@@ -17,6 +18,9 @@ class HomeController extends GetxController {
   final todayTasks = <TaskModel>[].obs;
   final recentPlants = <PlantModel>[].obs;
   final activatedTabs = [0].obs;
+
+  // New Services
+  final advisor = PlantAdvisorService();
 
   @override
   void onInit() {

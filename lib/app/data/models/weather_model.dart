@@ -1,5 +1,6 @@
 class WeatherModel {
   final String city;
+  final String country;
   final double temp;
   final double feelsLike;
   final int humidity;
@@ -11,6 +12,7 @@ class WeatherModel {
 
   WeatherModel({
     required this.city,
+    required this.country,
     required this.temp,
     required this.feelsLike,
     required this.humidity,
@@ -23,7 +25,8 @@ class WeatherModel {
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
-      city: json['name'],
+      city: json['name'] ?? 'ঢাকা',
+      country: json['sys'] != null ? json['sys']['country'] ?? 'BD' : 'BD',
       temp: (json['main']['temp'] as num).toDouble(),
       feelsLike: (json['main']['feels_like'] as num).toDouble(),
       humidity: json['main']['humidity'],
@@ -31,10 +34,7 @@ class WeatherModel {
       condition: json['weather'][0]['description'],
       conditionCode: json['weather'][0]['id'],
       icon: json['weather'][0]['icon'],
-      // OpenWeatherMap current API doesn't provide rainProbability directly in basic call,
-      // usually it's in 'rain' or 'pop' if using One Call API. 
-      // We'll set it to 0 or extract if available.
-      rainProbability: json['rain'] != null ? 70 : 0, 
+      rainProbability: json['rain'] != null ? 70 : (json['clouds']['all'] > 80 ? 30 : 0),
     );
   }
 }

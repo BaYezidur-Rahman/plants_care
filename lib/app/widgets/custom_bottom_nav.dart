@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
-
 import '../theme/app_colors.dart';
 
 class CustomBottomNav extends StatelessWidget {
@@ -19,9 +18,10 @@ class CustomBottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final double itemWidth = MediaQuery.of(context).size.width / 5;
+    const Color selectedColor = Color(0xFF2D5A27);
 
     return Container(
-      height: 85,
+      height: 70 + MediaQuery.of(context).padding.bottom,
       decoration: BoxDecoration(
         color: isDark ? AppColors.darkSurface : Colors.white,
         borderRadius: const BorderRadius.only(
@@ -30,52 +30,52 @@ class CustomBottomNav extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 15,
             offset: const Offset(0, -5),
           ),
         ],
       ),
       child: Stack(
         children: [
-          // Animated Pill Indicator
+          // Animated Top Indicator
           AnimatedPositioned(
-            duration: const Duration(milliseconds: 250),
+            duration: const Duration(milliseconds: 300),
             curve: Curves.easeOutBack,
             top: 0,
             left: currentIndex * itemWidth + (itemWidth / 2) - 15,
             child: Container(
               width: 30,
               height: 4,
-              decoration: const BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(4)),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.darkPrimary : selectedColor,
+                borderRadius: const BorderRadius.vertical(bottom: Radius.circular(4)),
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildNavItem(
-                  0, 'হোম', IconsaxPlusLinear.home, IconsaxPlusBold.home),
-              _buildNavItem(
-                  1, 'বাগান', IconsaxPlusLinear.tree, IconsaxPlusBold.tree),
-              _buildNavItem(2, 'রুটিন', IconsaxPlusLinear.calendar,
-                  IconsaxPlusBold.calendar),
-              _buildNavItem(
-                  3, 'লাইব্রেরি', IconsaxPlusLinear.book, IconsaxPlusBold.book),
-              _buildNavItem(4, 'প্রোফাইল', IconsaxPlusLinear.profile_circle,
-                  IconsaxPlusBold.profile_circle),
-            ],
+          Padding(
+            padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildNavItem(0, 'হোম', IconsaxPlusLinear.home, IconsaxPlusBold.home, isDark, selectedColor),
+                _buildNavItem(1, 'বাগান', IconsaxPlusLinear.tree, IconsaxPlusBold.tree, isDark, selectedColor),
+                _buildNavItem(2, 'গ্যালারি', IconsaxPlusLinear.gallery, IconsaxPlusBold.gallery, isDark, selectedColor),
+                _buildNavItem(3, 'রুটিন', IconsaxPlusLinear.calendar, IconsaxPlusBold.calendar, isDark, selectedColor),
+                _buildNavItem(4, 'লাইব্রেরি', IconsaxPlusLinear.book, IconsaxPlusBold.book, isDark, selectedColor),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildNavItem(
-      int index, String label, IconData outlineIcon, IconData filledIcon) {
+  Widget _buildNavItem(int index, String label, IconData outlineIcon, IconData filledIcon, bool isDark, Color selectedColor) {
     final isSelected = currentIndex == index;
+    final activeColor = isDark ? AppColors.darkPrimary : selectedColor;
+    final inactiveColor = isDark ? AppColors.darkTextHint : AppColors.textHint;
+
     return GestureDetector(
       onTap: () => onTap(index),
       behavior: HitTestBehavior.opaque,
@@ -84,21 +84,17 @@ class CustomBottomNav extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedScale(
-              scale: isSelected ? 1.2 : 1.0,
-              duration: const Duration(milliseconds: 200),
-              child: Icon(
-                isSelected ? filledIcon : outlineIcon,
-                color: isSelected ? AppColors.primary : AppColors.textHint,
-                size: 26,
-              ),
+            Icon(
+              isSelected ? filledIcon : outlineIcon,
+              color: isSelected ? activeColor : inactiveColor,
+              size: 24,
             ),
             const SizedBox(height: 4),
             Text(
               label,
               style: TextStyle(
                 fontSize: 10,
-                color: isSelected ? AppColors.primary : AppColors.textHint,
+                color: isSelected ? activeColor : inactiveColor,
                 fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
               ),
             ),

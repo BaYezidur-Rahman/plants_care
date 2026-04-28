@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hive/hive.dart';
-import '../../../theme/app_colors.dart';
-import '../../../utils/hive_boxes.dart';
+import '../../theme/app_colors.dart';
+import '../../utils/hive_boxes.dart';
 
-class CommunityGalleryTab extends StatefulWidget {
-  const CommunityGalleryTab({super.key});
+class CommunityGallery extends StatefulWidget {
+  const CommunityGallery({super.key});
 
   @override
-  State<CommunityGalleryTab> createState() => _CommunityGalleryTabState();
+  State<CommunityGallery> createState() => _CommunityGalleryState();
 }
 
-class _CommunityGalleryTabState extends State<CommunityGalleryTab> {
+class _CommunityGalleryState extends State<CommunityGallery> {
   final _emailController = TextEditingController();
   final _settingsBox = Hive.box(HiveBoxes.settings);
 

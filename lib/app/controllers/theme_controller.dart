@@ -13,6 +13,13 @@ class ThemeController extends GetxController {
   void onInit() {
     super.onInit();
     _loadTheme();
+
+    // Listen to system theme changes
+    WidgetsBinding.instance.platformDispatcher.onPlatformBrightnessChanged = () {
+      if (themeMode.value == ThemeMode.system) {
+        update(); // trigger rebuild for system theme change
+      }
+    };
   }
 
   void _loadTheme() {

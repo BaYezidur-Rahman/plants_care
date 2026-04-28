@@ -15,7 +15,7 @@ class WeatherService {
       if (response.statusCode == 200) {
         return WeatherModel.fromJson(json.decode(response.body));
       } else {
-        throw Exception('Failed to load weather data');
+        throw Exception('Failed to load weather data: ${response.statusCode}');
       }
     } catch (e) {
       throw Exception('Error fetching weather: $e');

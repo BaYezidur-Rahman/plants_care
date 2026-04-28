@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // LIGHT MODE:
-  static const primary = Color(0xFF2D6A4F); // deep forest green
-  static const primaryLight = Color(0xFF52B788); // medium green
-  static const accent = Color(0xFF95D5B2); // soft mint
-  static const accentWarm = Color(0xFFD8F3DC); // light mint
+  static const primary = Color(0xFF2D6A4F); 
+  static const primaryLight = Color(0xFF52B788); 
+  static const accent = Color(0xFF95D5B2); 
+  static const accentWarm = Color(0xFFD8F3DC); 
   static const background = Color(0xFFF8FAF8);
   static const surface = Color(0xFFFFFFFF);
   static const cardBg = Color(0xFFF0F7F0);
@@ -21,13 +21,15 @@ class AppColors {
   static const divider = Color(0xFFE8F5E9);
 
   // DARK MODE:
-  static const darkBackground = Color(0xFF121A13);
-  static const darkSurface = Color(0xFF1B2A1E);
+  static const darkBackground = Color(0xFF0D1F0F);
+  static const darkSurface = Color(0xFF1A2E1C);
   static const darkCardBg = Color(0xFF243325);
   static const darkPrimary = Color(0xFF52B788);
   static const darkTextPrimary = Color(0xFFD8F3DC);
   static const darkTextSecondary = Color(0xFF95D5B2);
-  static const darkTextHint = Color(0xFF4A6741);
+  static const darkTextHint = Color(0xFF52B788);
+  static const darkIcons = Color(0xFF95D5B2);
+  static const darkDivider = Color(0xFF2D4A30);
 
   // Gradients
   static const primaryGradient = LinearGradient(

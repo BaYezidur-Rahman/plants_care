@@ -5,9 +5,9 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
-import '../modules/main/views/main_view.dart';
+import '../modules/main/main_screen.dart';
 import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
+import '../modules/home/home_screen.dart';
 import '../modules/garden/bindings/garden_binding.dart';
 import '../modules/garden/garden_screen.dart';
 import '../modules/garden/views/plant_detail_view.dart';
@@ -46,12 +46,12 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.main,
-      page: () => const MainView(),
+      page: () => const MainScreen(),
       transition: Transition.fadeIn,
     ),
     GetPage(
       name: AppRoutes.home,
-      page: () => const HomeView(),
+      page: () => const HomeScreen(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -94,6 +94,7 @@ class AppPages {
       name: AppRoutes.profile,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+      transition: Transition.downToUp,
     ),
     GetPage(
       name: AppRoutes.settings,
@@ -108,7 +109,6 @@ class AppPages {
     GetPage(
       name: AppRoutes.plantDetail,
       page: () => const PlantDetailView(),
-      // Reusing GardenBinding for simplicity or create a separate one if needed
       binding: GardenBinding(),
     ),
   ];

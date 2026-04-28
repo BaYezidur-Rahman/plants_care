@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../theme/app_colors.dart';
 import 'tabs/plant_encyclopedia_tab.dart';
 import 'tabs/organic_recipes_tab.dart';
-import 'tabs/community_gallery_tab.dart';
 
 class LibraryScreen extends StatelessWidget {
   const LibraryScreen({super.key});
@@ -11,7 +10,7 @@ class LibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 7,
+      length: 6,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('তথ্য ভাণ্ডার 📚',
@@ -28,7 +27,7 @@ class LibraryScreen extends StatelessWidget {
               Tab(text: 'পোকামাকড়'),
               Tab(text: 'টিপস'),
               Tab(text: 'ভিডিও'),
-              Tab(text: 'গ্যালারি'),
+              
             ],
           ),
         ),
@@ -40,7 +39,7 @@ class LibraryScreen extends StatelessWidget {
             Center(child: Text('পোকামাকড় দমন গাইড শীঘ্রই আসছে...')),
             Center(child: Text('বাগান টিপস শীঘ্রই আসছে...')),
             Center(child: Text('ভিডিও টিউটোরিয়াল শীঘ্রই আসছে...')),
-            CommunityGalleryTab(),
+           
           ],
         ),
       ),

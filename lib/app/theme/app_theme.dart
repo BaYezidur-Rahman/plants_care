@@ -15,11 +15,12 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.primaryLight,
         surface: AppColors.surface,
+        onSurface: AppColors.textPrimary,
         error: AppColors.error,
         onPrimary: Colors.white,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.background,
         elevation: 0,
         centerTitle: true,
         titleTextStyle: GoogleFonts.hindSiliguri(
@@ -66,7 +67,7 @@ class AppTheme {
         selectedItemColor: AppColors.primary,
         unselectedItemColor: AppColors.textHint,
         type: BottomNavigationBarType.fixed,
-        elevation: 0,
+        elevation: 10,
       ),
       chipTheme: ChipThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -91,11 +92,12 @@ class AppTheme {
         primary: AppColors.darkPrimary,
         secondary: AppColors.primaryLight,
         surface: AppColors.darkSurface,
+        onSurface: AppColors.darkTextPrimary,
         error: AppColors.error,
         onPrimary: Colors.white,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.darkBackground,
         elevation: 0,
         centerTitle: true,
         titleTextStyle: GoogleFonts.hindSiliguri(
@@ -142,7 +144,7 @@ class AppTheme {
         selectedItemColor: AppColors.darkPrimary,
         unselectedItemColor: AppColors.darkTextHint,
         type: BottomNavigationBarType.fixed,
-        elevation: 0,
+        elevation: 10,
       ),
       chipTheme: ChipThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -150,8 +152,8 @@ class AppTheme {
         labelStyle: GoogleFonts.hindSiliguri(color: AppColors.darkTextSecondary, fontSize: 12),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       ),
-      dividerTheme: DividerThemeData(
-        color: AppColors.darkTextHint.withOpacity(0.2),
+      dividerTheme: const DividerThemeData(
+        color: AppColors.darkDivider,
         thickness: 1,
       ),
     );
